@@ -14,3 +14,10 @@ class Actor(models.Model):
 
     def __str__(self):
         return self.actor_name
+
+
+class Actress(models.Model):
+    Actress_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.actress_name

@@ -7,3 +7,10 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.movie_name
+
+
+class Actor(models.Model):
+    actor_name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.actor_name

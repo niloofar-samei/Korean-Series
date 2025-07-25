@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import Movie, Actor, Actress
+from .models import Movie
 
 
 def index(request):
@@ -9,7 +9,7 @@ def index(request):
 
 
 def movie(request, movie_id):
-    movie = Movie.objects.get(pk=movie_id)
+    movie = get_object_or_404(Movie, pk=movie_id)
     actor = movie.actor_set.all()
     actress = movie.actress_set.all()
     print(actor)

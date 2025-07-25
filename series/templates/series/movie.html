@@ -1,1 +1,17 @@
-{{ movie.movie_name }}
+{% extends "series/base.html"%}
+
+{% block content %}
+    <h3>{{ movie.movie_name }} ({{ movie.released_year }})</h3>
+
+    <h4>ACTORS:</h4>
+    {% for each in actor %}
+        <i>{{ each }}</i>
+    {% endfor %}
+
+    <h4>ACTRESSES:</h4>
+
+    {% for each in actress %}
+        <i>{{ each }}</i>
+    {% endfor %}
+
+{% endblock %}

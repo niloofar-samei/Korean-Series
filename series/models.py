@@ -18,7 +18,7 @@ class Actor(models.Model):
 
 
 class Actress(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True, blank=True)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     actress_name = models.CharField(max_length=200)
 
     def __str__(self):

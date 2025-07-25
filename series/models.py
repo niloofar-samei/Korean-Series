@@ -10,7 +10,7 @@ class Movie(models.Model):
 
 
 class Actor(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True, blank=True)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     actor_name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Actor(models.Model):
 
 class Actress(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True, blank=True)
-    Actress_name = models.CharField(max_length=200)
+    actress_name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.actress_name

@@ -1,17 +1,30 @@
 {% extends "series/base.html"%}
 
 {% block content %}
-    <h3>{{ movie.movie_name }} ({{ movie.released_year }})</h3>
 
-    <h4>ACTORS:</h4>
-    {% for each in actor %}
-        <i>{{ each }}</i>
-    {% endfor %}
+    <a href="#" class="badge badge-success" style="color:red">Success</a>
 
-    <h4>ACTRESSES:</h4>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
 
-    {% for each in actress %}
-        <i>{{ each }}</i>
-    {% endfor %}
+            <p class="card-text">
+                <h3>{{ movie.movie_name }} ({{ movie.released_year }})</h3>
+
+                <h4>ACTORS:</h4>
+                {% for each in actor %}
+                    <i>{{ each }}</i>
+                {% endfor %}
+
+                <h4>ACTRESSES:</h4>
+
+                {% for each in actress %}
+                    <i>{{ each }}</i>
+                {% endfor %}
+            </p>
+
+        </div>
+    </div>
 
 {% endblock %}

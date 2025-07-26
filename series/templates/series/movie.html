@@ -3,8 +3,8 @@
 {% load static %}
 {% block content %}
 
-    <a href="#" class="badge badge-success" style="color:red">Success</a>
-
+<div class="row">
+  <div class="col-sm-6" style="border: 2px solid yellow">
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{% static 'series/happiness.jpg' %}" alt="Card image cap">
         <div class="card-body">
@@ -26,9 +26,32 @@
                     <i>{{ each }}</i>
                 {% endfor %}
                 </p>
+
             </p>
 
+            <a href="#" class="card-link">Vote Up</a>
         </div>
     </div>
+</div>
+
+  <div class="col-sm-3" style="border: 1px solid green">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3" style="border: 1px solid blue;">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

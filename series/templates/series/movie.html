@@ -8,21 +8,24 @@
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{% static 'series/happiness.jpg' %}" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">{{ movie.movie_name }} ({{ movie.released_year }})</h5>
 
             <p class="card-text">
-                <h3>{{ movie.movie_name }} ({{ movie.released_year }})</h3>
+                <p>ACTORS:</p>
 
-                <h4>ACTORS:</h4>
+                <p>
                 {% for each in actor %}
                     <i>{{ each }}</i>
                 {% endfor %}
+                </p>
 
-                <h4>ACTRESSES:</h4>
+                <p>ACTRESSES:</p>
 
+                <p>
                 {% for each in actress %}
                     <i>{{ each }}</i>
                 {% endfor %}
+                </p>
             </p>
 
         </div>

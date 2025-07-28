@@ -2,20 +2,17 @@
 
 {% block content %}
 
-<form>
+<form action="{% url 'new' %}" method="POST">
   {% csrf_token %}
 
   <div class="form-group">
     <label for="movie" style="margin-bottom: 10px">Movie:</label>
-    <input type="text" class="form-control form-control-lg" id="movie" placeholder="Enter a new movie name"  style="margin-bottom: 10px">
+    <input type="text" name="movie" class="form-control form-control-lg" id="movie" style="margin-bottom: 10px">
   </div>
+
   <div class="form-group">
-    <label for="actor" style="margin-bottom: 10px">Actor:</label>
-    <input type="text" class="form-control form-control-lg" id="actor" placeholder="Enter actor name" style="margin-bottom: 10px">
-  </div>
-  <div class="form-group">
-    <label for="actress" style="margin-bottom: 10px">Actress:</label>
-    <input type="text" class="form-control form-control-lg" id="actress" placeholder="Enter actress name" style="margin-bottom: 10px">
+    <label for="year" style="margin-bottom: 10px">Released Year:</label>
+    <input type="text" name="year" class="form-control form-control-lg" id="year" style="margin-bottom: 10px">
   </div>
 
   <button type="submit" class="btn btn-primary">Add movie</button>

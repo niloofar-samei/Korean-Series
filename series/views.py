@@ -20,4 +20,8 @@ def movie(request, movie_id):
 
 
 def new(request):
+    if request.method == "POST":
+        new_movie = request.POST.get("movie")
+        new_year = request.POST.get("year")
+        Movie.objects.create(movie_name=new_movie)
     return render(request, "series/new.html")

@@ -21,39 +21,27 @@
     </div>
 </div>
 
-  <div class="col-sm-3" style="border: 1px solid green">
-    <div class="card">
-      <img class="card-img-top" src="{% static 'series/actress/actress1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px">
-      <div class="card-body">
-        <p class="card-text">
 
-            <p>
-              {% for each in actress %}
-                  <i>{{ each }}</i>
-              {% endfor %}
-            </p>
-
-        </p>
-
-      </div>
-    </div>
+<div class="col-sm-3" style="border: 1px solid green;">
+  <div style="border: 2px solid black;">
+  <img class="card-img-top" src="{% static 'series/actress/actress1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
+  <p style="border: 1px solid red; margin-top: 10px; text-align: center">
+    {% for each in actress %}
+        <i>{{ each }}</i>
+    {% endfor %}
+  </p>
   </div>
-  <div class="col-sm-3" style="border: 1px solid green">
-    <div class="card">
-      <img class="card-img-top" src="{% static 'series/actor/actor1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px">
-      <div class="card-body">
-        <p class="card-text">
+</div>
 
-            <p>
-              {% for each in actor %}
-                  <i>{{ each }}</i>
-              {% endfor %}
-            </p>
-
-        </p>
-
-      </div>
-    </div>
+<div class="col-sm-3" style="border: 1px solid green;">
+  <div style="border: 2px solid black;">
+  <img class="card-img-top" src="{% static 'series/actor/actor1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
+  <p style="border: 1px solid red; margin-top: 10px; text-align: center">
+    {% for each in actor %}
+        <i>{{ each }}</i>
+    {% endfor %}
+  </p>
   </div>
+</div>
 
 {% endblock %}

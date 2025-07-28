@@ -19,3 +19,7 @@ def movie(request, movie_id):
         "series/movie.html",
         {"movie": movie, "actor": actor, "actress": actress},
     )
+
+
+def new(request):
+    return render(request, "series/new.html")

@@ -23,5 +23,10 @@ def new(request):
     if request.method == "POST":
         new_movie = request.POST.get("movie")
         new_year = request.POST.get("year")
-        Movie.objects.create(movie_name=new_movie)
+        actress_name = request.POST.get("actress")
+        actor_name = request.POST.get("actor")
+        Movie.objects.create(movie_name=new_movie, released_year=new_year)
+        selected_movie = Movie.objects.get(movie_name=new_movie)
+        print(selected_movie.actress_set.all())
+        selected_movie.actress_set.create(actress_name=actress_name)
     return render(request, "series/new.html")

@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from .models import Movie
 
 
@@ -40,9 +41,11 @@ def new(request):
                 )
                 new_movie.actress_set.create(actress_name=actress_name)
                 new_movie.actor_set.create(actor_name=actor_name)
-                return render(
-                    request, "series/new.html", {"success": "it was successfil."}
-                )
+                messages.success(request, f"Movie '{new_movie}' created successfully.")
+                return redirect("new")
+                # return render(
+                #    request, "series/new.html", {"success": "it was successfil."}
+                # )
             except Exception as e:
                 print("Error while saving:", e)
                 return render(

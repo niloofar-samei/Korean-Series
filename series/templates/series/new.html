@@ -1,6 +1,12 @@
 {% extends "series/base.html" %}
 
 {% block content %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+
 {% if error %}
     <div class="alert alert-danger" role="alert">
       {{ error }}

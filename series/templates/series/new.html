@@ -1,7 +1,8 @@
 {% extends "series/base.html" %}
 
 {% block content %}
-{% if error_message %}{{ error_message }}{% endif %}
+{% if error %}{{ error }}{% endif %}
+{% if success %}{{ success }}{% endif %}
 
 <form action="{% url 'new' %}" method="POST">
   {% csrf_token %}

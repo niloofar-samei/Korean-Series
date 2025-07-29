@@ -30,15 +30,23 @@ def new(request):
             return render(request, "series/new.html")
         else:
             print("its new.")
-            new_movie = request.POST.get("movie")
-            new_year = request.POST.get("year")
-            actress_name = request.POST.get("actress")
-            actor_name = request.POST.get("actor")
-            new_movie = Movie.objects.create(
-                movie_name=new_movie, released_year=new_year
-            )
-            new_movie.actress_set.create(actress_name=actress_name)
-            new_movie.actor_set.create(actor_name=actor_name)
-            return render(request, "series/new.html")
+            try:
+                new_movie = request.POST.get("movie")
+                new_year = request.POST.get("year")
+                actress_name = request.POST.get("actress")
+                actor_name = request.POST.get("actor")
+                new_movie = Movie.objects.create(
+                    movie_name=new_movie, released_year=new_year
+                )
+                new_movie.actress_set.create(actress_name=actress_name)
+                new_movie.actor_set.create(actor_name=actor_name)
+                return render(
+                    request, "series/new.html", {"success": "it was successfil."}
+                )
+            except Exception as e:
+                print("Error while saving:", e)
+                return render(
+                    request, "series/new.html", {"error": "there was a problem."}
+                )
 
     return render(request, "series/new.html")

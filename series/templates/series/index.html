@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<a href="{% url 'new'%}">Add a new movie.</a>
+<a href="{% url 'new'%}">Add a new movie</a>
 
     {% if movie_list %}
 
-        <ul>
+        <ul style="margin-top: 20px">
             {% for movie in movie_list %}
 
                 <li><a href="{% url 'movie' movie.id %}">{{ movie.movie_name }}</a>
-                  ({{movie.released_year}}) - {{movie.id}}
+                  ({{movie.released_year}})
                 </li>
 
             {% endfor %}

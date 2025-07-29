@@ -6,7 +6,7 @@ from .models import Movie
 
 
 def index(request):
-    movie_list = Movie.objects.all()
+    movie_list = Movie.objects.all().order_by("-voteup")
     return render(request, "series/index.html", {"movie_list": movie_list})
 
 

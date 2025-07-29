@@ -35,11 +35,17 @@ def new(request):
                 new_year = request.POST.get("year")
                 actress_name = request.POST.get("actress")
                 actor_name = request.POST.get("actor")
+                actress_image = request.FILES.get("actress_image")
+                actor_image = request.FILES.get("actor_image")
                 new_movie = Movie.objects.create(
                     movie_name=new_movie, released_year=new_year
                 )
-                new_movie.actress_set.create(actress_name=actress_name)
-                new_movie.actor_set.create(actor_name=actor_name)
+                new_movie.actress_set.create(
+                    actress_name=actress_name, actress_image=actress_image
+                )
+                new_movie.actor_set.create(
+                    actor_name=actor_name, actor_image=actor_image
+                )
                 messages.success(request, f"Movie '{new_movie}' created successfully.")
                 return redirect("new")
 

@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Movie
 
 
@@ -50,3 +50,10 @@ def new(request):
                 )
 
     return render(request, "series/new.html")
+
+
+def delete(request, movie_id):
+    print(movie_id)
+    selected_movie = Movie.objects.get(pk=movie_id)
+    selected_movie.delete()
+    return redirect("index")

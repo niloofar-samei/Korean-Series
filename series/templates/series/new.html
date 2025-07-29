@@ -1,8 +1,17 @@
 {% extends "series/base.html" %}
 
 {% block content %}
-{% if error %}{{ error }}{% endif %}
-{% if success %}{{ success }}{% endif %}
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+{% endif %}
+
+{% if success %}
+    <div class="alert alert-success" role="alert">
+      {{success}}
+    </div>
+{% endif %}
 
 <form action="{% url 'new' %}" method="POST">
   {% csrf_token %}

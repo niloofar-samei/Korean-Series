@@ -2,9 +2,10 @@
 
 {% load static %}
 {% block content %}
-            <a href="{% url 'index'%}" style="margin-left: 20px">Back to main page</a>
+<a href="{% url 'index'%}" style="margin-left: 30px">Back to main page</a>
+
 <div class="row">
-  <div class="col-sm-6" style="border: 2px solid yellow;">
+  <div class="col-sm-6">
     <div class="card" style="width: 18rem; margin-left: auto; margin-right: auto">
       <img class="card-img-top" src="{% static 'series/movie/happiness.jpg' %}" alt="Card image cap">
         <div class="card-body">
@@ -30,20 +31,20 @@
 </div>
 
 
-<div class="col-sm-3" style="border: 1px solid green;">
+<div class="col-sm-3">
 
-  <div style="border: 2px solid black;">
+  <div>
   <img class="card-img-top" src="{% static 'series/actress/actress1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
-  <p style="border: 1px solid red; margin-top: 10px; text-align: center">
+  <p style="margin-top: 10px; text-align: center">
     {% for each in actress %}
         <i>{{ each }}</i>
     {% endfor %}
   </p>
   </div>
 
-  <div style="border: 2px solid black; margin-top: 20px">
+  <div style="margin-top: 40px">
   <img class="card-img-top" src="{% static 'series/actress/actress1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
-  <p style="border: 1px solid red; margin-top: 10px; text-align: center">
+  <p style="margin-top: 10px; text-align: center">
     {% for each in actress %}
         <i>{{ each }}</i>
     {% endfor %}
@@ -54,20 +55,20 @@
 
 
 
-<div class="col-sm-3" style="border: 1px solid green;">
+<div class="col-sm-3">
 
-  <div style="border: 2px solid black;">
+  <div>
   <img class="card-img-top" src="{% static 'series/actor/actor1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
-  <p style="border: 1px solid red; margin-top: 10px; text-align: center">
+  <p style="margin-top: 10px; text-align: center">
     {% for each in actor %}
         <i>{{ each }}</i>
     {% endfor %}
   </p>
   </div>
 
-  <div style="border: 2px solid black; margin-top: 20px">
+  <div style="margin-top: 40px">
   <img class="card-img-top" src="{% static 'series/actor/actor1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
-  <p style="border: 1px solid red; margin-top: 10px; text-align: center">
+  <p style="margin-top: 10px; text-align: center">
     {% for each in actor %}
         <i>{{ each }}</i>
     {% endfor %}

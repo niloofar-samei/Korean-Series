@@ -12,7 +12,7 @@
   {% endfor %}
 {% endif %}
 
-<form action="{% url 'new' %}" method="POST">
+<form action="{% url 'new' %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
 
   <div class="form-group">
@@ -34,6 +34,24 @@
     <label for="actor" style="margin-bottom: 10px">Actor name:</label>
     <input type="text" name="actor" class="form-control form-control-lg" id="actor" style="margin-bottom: 10px">
   </div>
+
+<div class="row">
+
+<div class="col-sm-6">
+  <div class="form-group">
+    <label for="actress_image" style="margin-bottom: 10px">Actress image:</label>
+    <input type="file" name="actress_image" id="actress_image" style="margin-top: 20px; margin-bottom: 30px">
+  </div>
+</div>
+
+<div class="col-sm-6">
+  <div class="form-group">
+    <label for="actor_image" style="margin-bottom: 10px">Actor image:</label>
+    <input type="file" name="actor_image" id="actor_image" style="margin-top: 20px; margin-bottom: 30px">
+  </div>
+</div>
+
+</div>
 
   <button type="submit" class="btn btn-primary">Save</button>
   <a href="{% url 'index'%}" style="margin-left: 20px">Back to main page</a>

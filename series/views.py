@@ -25,12 +25,10 @@ def new(request):
         existing_movie = Movie.objects.filter(
             movie_name=request.POST.get("movie")
         ).first()
-        print(existing_movie)
+
         if existing_movie:
-            print("again?")
             return render(request, "series/new.html")
         else:
-            print("its new.")
             try:
                 new_movie = request.POST.get("movie")
                 new_year = request.POST.get("year")
@@ -43,9 +41,7 @@ def new(request):
                 new_movie.actor_set.create(actor_name=actor_name)
                 messages.success(request, f"Movie '{new_movie}' created successfully.")
                 return redirect("new")
-                # return render(
-                #    request, "series/new.html", {"success": "it was successfil."}
-                # )
+
             except Exception as e:
                 print("Error while saving:", e)
                 return render(

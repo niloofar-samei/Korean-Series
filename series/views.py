@@ -58,3 +58,7 @@ def delete(request, movie_id):
     selected_movie = Movie.objects.get(pk=movie_id)
     selected_movie.delete()
     return redirect("index")
+
+
+def voteup(request, movie_id):
+    pass

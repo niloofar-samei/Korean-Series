@@ -19,7 +19,7 @@
 
             <div class="row" style="text-align: center">
               <div class="col-sm-6">
-                <a href="#" class="card-link">Vote Up</a>
+                <a href="{% url 'voteup' movie.id %}" class="card-link">Vote Up</a>
               </div>
               <div class="col-sm-6">
                 <a href="{% url 'delete' movie.id %}">Delete</a>

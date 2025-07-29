@@ -6,4 +6,5 @@ urlpatterns = [
     path("movie/<int:movie_id>/", views.movie, name="movie"),
     path("new/", views.new, name="new"),
     path("delete/<int:movie_id>", views.delete, name="delete"),
+    path("voteup/<int:movie_id>", views.voteup, name="voteup"),
 ]

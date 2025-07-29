@@ -44,9 +44,11 @@ def new(request):
 
             except Exception as e:
                 print("Error while saving:", e)
-                return render(
-                    request, "series/new.html", {"error": "there was a problem."}
-                )
+                messages.error(request, "You got error.")
+                return redirect(new)
+                # return render(
+                #    request, "series/new.html", {"error": "there was a problem."}
+                # )
 
     return render(request, "series/new.html")
 

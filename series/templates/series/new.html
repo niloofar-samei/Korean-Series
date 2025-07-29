@@ -3,20 +3,12 @@
 {% block content %}
 {% if messages %}
   {% for message in messages %}
-    <div class="alert alert-success">{{ message }}</div>
+    {% if message.tags == "success" %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% else %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
   {% endfor %}
-{% endif %}
-
-{% if error %}
-    <div class="alert alert-danger" role="alert">
-      {{ error }}
-    </div>
-{% endif %}
-
-{% if success %}
-    <div class="alert alert-success" role="alert">
-      {{success}}
-    </div>
 {% endif %}
 
 <form action="{% url 'new' %}" method="POST">

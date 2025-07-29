@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.db.models import F
 from .models import Movie
 
 
@@ -61,4 +62,7 @@ def delete(request, movie_id):
 
 
 def voteup(request, movie_id):
-    pass
+    movie = get_object_or_404(Movie, pk=movie_id)
+    movie.voteup = F("voteup") + 1
+    movie.save()
+    return redirect("index")

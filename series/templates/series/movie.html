@@ -2,9 +2,7 @@
 
 {% load static %}
 {% block content %}
-
-<a href="{% url 'delete' movie.id %}">here</a>
-
+            <a href="{% url 'index'%}" style="margin-left: 20px">Back to main page</a>
 <div class="row">
   <div class="col-sm-6" style="border: 2px solid yellow;">
     <div class="card" style="width: 18rem; margin-left: auto; margin-right: auto">
@@ -18,7 +16,15 @@
 
             </p>
 
-            <a href="#" class="card-link">Vote Up</a>
+            <div class="row" style="text-align: center">
+              <div class="col-sm-6">
+                <a href="#" class="card-link">Vote Up</a>
+              </div>
+              <div class="col-sm-6">
+                <a href="{% url 'delete' movie.id %}">Delete</a>
+              </div>
+            </div>
+
         </div>
     </div>
 </div>

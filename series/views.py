@@ -29,8 +29,13 @@ def new(request):
             movie_name=request.POST.get("movie")
         ).first()
 
+        messages.error(request, "Movie already exists.")
+
         if existing_movie:
-            return render(request, "series/new.html")
+            return render(
+                request,
+                "series/new.html",
+            )
         else:
             try:
                 new_movie = request.POST.get("movie")
@@ -58,7 +63,7 @@ def new(request):
 
             except Exception as e:
                 print("Error while saving:", e)
-                messages.error(request, "You got error.")
+                messages.error(request, e)
                 return redirect(new)
 
     return render(request, "series/new.html")

@@ -5,7 +5,7 @@ class Movie(models.Model):
     movie_name = models.CharField(max_length=200)
     released_year = models.IntegerField(default=0)
     voteup = models.IntegerField(default=0)
-    movie_image = models.ImageField(upload_to="movie/")
+    movie_image = models.ImageField(upload_to="movie/", blank=True, null=True)
 
     def __str__(self):
         return self.movie_name
@@ -14,7 +14,7 @@ class Movie(models.Model):
 class Actor(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     actor_name = models.CharField(max_length=200)
-    actor_image = models.ImageField(upload_to="actor/")
+    actor_image = models.ImageField(upload_to="actor/", blank=True, null=True)
 
     def __str__(self):
         return self.actor_name

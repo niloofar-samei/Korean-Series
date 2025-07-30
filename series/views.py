@@ -56,9 +56,6 @@ def new(request):
                 print("Error while saving:", e)
                 messages.error(request, "You got error.")
                 return redirect(new)
-                # return render(
-                #    request, "series/new.html", {"error": "there was a problem."}
-                # )
 
     return render(request, "series/new.html")
 

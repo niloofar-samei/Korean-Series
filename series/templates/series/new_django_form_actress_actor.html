@@ -1,0 +1,12 @@
+{% extends "series/base.html" %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form_actress.as_p }}
+  {{ form_actor.as_p }}
+  <button type="submit">Add Actress and Actor</button>
+</form>
+
+{% endblock %}

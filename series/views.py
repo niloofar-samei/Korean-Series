@@ -1,7 +1,9 @@
+from django.forms import formset_factory
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.db.models import F
+from series.forms import ActorForm, ActressForm, MovieForm
 from .models import Movie
 
 
@@ -60,6 +62,42 @@ def new(request):
                 return redirect(new)
 
     return render(request, "series/new.html")
+
+
+def new_django_form_movie(request):
+    if request.method == "POST":
+        form_movie = MovieForm(request.POST, request.FILES)
+        if form_movie.is_valid():
+            movie = form_movie.save()
+            return redirect("add_actress_actor", movie_id=movie.id)
+    else:
+        form_movie = MovieForm()
+    return render(
+        request,
+        "series/new_django_form_movie.html",
+        {
+            "form_movie": form_movie,
+        },
+    )
+
+
+def add_actress_actor(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+    if request.method == "POST":
+        form_actress = ActressForm(request.POST, request.FILES)
+        form_actor = ActorForm(request.POST, request.FILES)
+        if form_actress.is_valid() and form_actor.is_valid():
+            form_actress.save()
+            form_actor.save()
+            return redirect("index")
+    else:
+        form_actress = ActressForm()
+        form_actor = ActorForm()
+    return render(
+        request,
+        "series/new_django_form_actress_actor.html",
+        {"form_actress": form_actress, "form_actor": form_actor},
+    )
 
 
 def delete(request, movie_id):

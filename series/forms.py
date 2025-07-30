@@ -6,6 +6,7 @@ class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
         fields = "__all__"
+        exclude = ("voteup",)
 
         labels = {
             "movie_name": "movie_name",

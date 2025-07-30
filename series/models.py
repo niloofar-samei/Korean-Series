@@ -22,7 +22,7 @@ class Actor(models.Model):
 class Actress(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     actress_name = models.CharField(max_length=200)
-    actor_image = models.ImageField(upload_to="Actress/", blank=True, null=True)
+    actress_image = models.ImageField(upload_to="Actress/", blank=True, null=True)
 
     def __str__(self):
         return self.actress_name

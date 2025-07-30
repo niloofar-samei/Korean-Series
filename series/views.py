@@ -14,8 +14,6 @@ def movie(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
     actor = movie.actor_set.all()
     actress = movie.actress_set.all()
-    print("-------")
-    print(actress)
     return render(
         request,
         "series/movie.html",
@@ -37,7 +35,7 @@ def new(request):
                 new_year = request.POST.get("year")
                 actress_name = request.POST.get("actress")
                 actor_name = request.POST.get("actor")
-                movie_image = request.FILES.got("movie_image")
+                movie_image = request.FILES.get("movie_image")
                 actress_image = request.FILES.get("actress_image")
                 actor_image = request.FILES.get("actor_image")
                 new_movie = Movie.objects.create(

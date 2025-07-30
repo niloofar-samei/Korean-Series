@@ -37,11 +37,13 @@ def new(request):
                 new_year = request.POST.get("year")
                 actress_name = request.POST.get("actress")
                 actor_name = request.POST.get("actor")
+                movie_image = request.FILES.got("movie_image")
                 actress_image = request.FILES.get("actress_image")
-                print(actress_image)
                 actor_image = request.FILES.get("actor_image")
                 new_movie = Movie.objects.create(
-                    movie_name=new_movie, released_year=new_year
+                    movie_name=new_movie,
+                    released_year=new_year,
+                    movie_image=movie_image,
                 )
                 new_movie.actress_set.create(
                     actress_name=actress_name, actress_image=actress_image

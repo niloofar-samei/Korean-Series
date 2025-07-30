@@ -33,6 +33,7 @@ def new(request):
             try:
                 new_movie = request.POST.get("movie")
                 new_year = request.POST.get("year")
+                movie_about = request.POST.get("movie_about")
                 actress_name = request.POST.get("actress")
                 actor_name = request.POST.get("actor")
                 movie_image = request.FILES.get("movie_image")
@@ -41,6 +42,7 @@ def new(request):
                 new_movie = Movie.objects.create(
                     movie_name=new_movie,
                     released_year=new_year,
+                    movie_about=movie_about,
                     movie_image=movie_image,
                 )
                 new_movie.actress_set.create(

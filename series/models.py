@@ -6,6 +6,7 @@ class Movie(models.Model):
     released_year = models.IntegerField(default=0)
     voteup = models.IntegerField(default=0)
     movie_image = models.ImageField(upload_to="movie/", blank=True, null=True)
+    movie_about = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.movie_name

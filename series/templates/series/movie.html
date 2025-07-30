@@ -2,6 +2,7 @@
 
 {% load static %}
 {% block content %}
+
 <a href="{% url 'index'%}" style="margin-left: 30px">Back to main page</a>
 
 <div class="row">
@@ -31,50 +32,26 @@
 </div>
 
 
-<div class="col-sm-3">
-
-  <div>
-  <img class="card-img-top" src="{% static 'series/actress/actress1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
+  {% for each in actress %}
+  <div class="col-sm-3">
+  <img class="card-img-top" src="{{ each.actress_image.url }}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
   <p style="margin-top: 10px; text-align: center">
-    {% for each in actress %}
+
         <i>{{ each }}</i>
-    {% endfor %}
   </p>
   </div>
+  {% endfor %}
 
-  <div style="margin-top: 40px">
-  <img class="card-img-top" src="{% static 'series/actress/actress1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
+  {% for each in actor %}
+  <div class="col-sm-3">
+  <img class="card-img-top" src="{{ each.actor_image.url }}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
   <p style="margin-top: 10px; text-align: center">
-    {% for each in actress %}
+
         <i>{{ each }}</i>
-    {% endfor %}
   </p>
   </div>
-
-</div>
-
+  {% endfor %}
 
 
-<div class="col-sm-3">
-
-  <div>
-  <img class="card-img-top" src="{% static 'series/actor/actor1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
-  <p style="margin-top: 10px; text-align: center">
-    {% for each in actor %}
-        <i>{{ each }}</i>
-    {% endfor %}
-  </p>
-  </div>
-
-  <div style="margin-top: 40px">
-  <img class="card-img-top" src="{% static 'series/actor/actor1.jpg' %}" alt="Card image cap" style="border-radius: 100px; width:130px; margin-left: auto; margin-right: auto; margin-top: 20px; display: block">
-  <p style="margin-top: 10px; text-align: center">
-    {% for each in actor %}
-        <i>{{ each }}</i>
-    {% endfor %}
-  </p>
-  </div>
-
-</div>
 
 {% endblock %}

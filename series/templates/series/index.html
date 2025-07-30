@@ -9,8 +9,9 @@
         <ul style="margin-top: 20px">
             {% for movie in movie_list %}
 
-                <li><a href="{% url 'movie' movie.id %}">{{ movie.movie_name }}</a>
-                  ({{movie.released_year}}) - {{movie.voteup}} - {{movie.id}}
+                <li>
+                  <a href="{% url 'movie' movie.id %}">{{ movie.movie_name }}</a>
+                  ({{ movie.released_year }}) - <i>{{ movie.voteup }} Votes</i>
                 </li>
 
             {% endfor %}

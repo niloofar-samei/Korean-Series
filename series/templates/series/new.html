@@ -12,10 +12,10 @@
   {% endfor %}
 {% endif %}
 
-<form action="{% url 'new' %}" method="POST" enctype="multipart/form-data">
+<form action="{% url 'new' %}" method="POST" enctype="multipart/form-data" style="max-width: 550px; padding: 15px; margin-left: auto; margin-right: auto">
   {% csrf_token %}
 
-  <div class="form-group">
+  <div class="form-group" class="col-xs-4">
     <label for="movie" style="margin-bottom: 10px">Movie:</label>
     <input type="text" name="movie" class="form-control form-control-lg" id="movie" style="margin-bottom: 10px">
   </div>

@@ -3,8 +3,6 @@
 {% load static %}
 {% block content %}
 
-<a href="{% url 'index'%}" style="margin-left: 30px">Back to main page</a>
-
 <div class="row">
   <div class="col-sm-6">
     <div class="card" style="width: 18rem; margin-left: auto; margin-right: auto">
@@ -24,6 +22,12 @@
               </div>
               <div class="col-sm-6">
                 <a href="{% url 'delete' movie.id %}">Delete</a>
+              </div>
+            </div>
+
+            <div class="row" style="text-align: center; margin-top: 10px">
+              <div class="col-sm-12">
+                <a href="{% url 'index'%}">Back to main page</a>
               </div>
             </div>
 

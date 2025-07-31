@@ -29,9 +29,8 @@ def new(request):
             movie_name=request.POST.get("movie")
         ).first()
 
-        messages.error(request, "Movie already exists.")
-
         if existing_movie:
+            messages.error(request, "Movie already exists.")
             return render(
                 request,
                 "series/new.html",

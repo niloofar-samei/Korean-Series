@@ -3,7 +3,10 @@
 {% block content %}
 
 <a href="{% url 'new'%}">Add a new movie</a>
+{% comment %}
 <a href="{% url 'new_django_form_movie'%}" style="color: red; margin-left: 10px">Add by django form</a>
+{% endcomment %}
+<a href="{% url 'new_django_form'%}" style="color: red; margin-left: 10px">Add by django form</a>
 
     {% if movie_list %}
 

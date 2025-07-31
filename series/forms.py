@@ -20,9 +20,11 @@ class ActressForm(forms.ModelForm):
     class Meta:
         model = Actress
         fields = "__all__"
+        exclude = ("movie",)
 
 
 class ActorForm(forms.ModelForm):
     class Meta:
         model = Actor
         fields = "__all__"
+        exclude = ("movie",)

@@ -14,7 +14,7 @@
 
                 <li>
                   <a href="{% url 'movie' movie.id %}">{{ movie.movie_name }}</a>
-                  ({{ movie.released_year }}) - <i>{{ movie.voteup }} Votes</i>
+                  ({{ movie.released_year }}) - <i>{{ movie.voteup }} Vote{{movie.voteup|pluralize}}</i>
                 </li>
 
             {% endfor %}
